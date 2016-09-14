@@ -73,3 +73,26 @@ getUID | -87008(...)
 getSwDpi | 320
 getSdkVersion | 19
 getOsVersion | 4.4.4
+
+#### Example of testing code
+Wanna dump your device's data to array? NP, use this:
+```Javascript
+Object.keys(deviceInfo).forEach(function (v) {
+    deviceInfo[v]('', function(out){
+        $scope.testOut.push({
+            name: v,
+            out: out
+        });
+    });
+});
+```
+Then, somewere before the `deviceready` event, place a `$scope.testOut = [];`
+
+Again, remember to call it inside the `deviceready` event. You can use the following template to dump the info:
+```html
+<div class="container" ng-controller="aController">
+  <div class="row" ng-repeat="out in testOut">
+    <div class="col">{{out.name}}</div>
+    <div class="col">{{out.out}}</div>
+  </div>
+</div>
