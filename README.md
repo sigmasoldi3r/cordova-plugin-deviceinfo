@@ -23,7 +23,7 @@ Let's supose we have a template like:
 ```html
 <div class="container" ng-controller="aController">
   <div class="row">
-    <div class="col>
+    <div class="col">
       SDK Version: {{sdkver}}
     </div>
   </div>
@@ -96,3 +96,4 @@ Again, remember to call it inside the `deviceready` event. You can use the follo
     <div class="col">{{out.out}}</div>
   </div>
 </div>
+```
