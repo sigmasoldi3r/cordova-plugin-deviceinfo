@@ -1,4 +1,7 @@
 # Android Device Info
+
+[![npm version](https://badge.fury.io/js/cordova-plugin-android-misc-info.svg)](https://badge.fury.io/js/cordova-plugin-android-misc-info)
+
 This plugin allows you to gather data from your android device form things like, the __SwDPI, SDK Version, OS Version...__
 
 A full list is written below; [Goto functions list](https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo#functions)
