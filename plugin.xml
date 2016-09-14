@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Android DeviceInfo - An Android Miscellaneous device information provider
+    Copyright (C) 2016 Pablo 'sigmasoldi3r' Blanco Celdrán
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	
+	Contact: pablobc.1995@gmail.com
+-->
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-plugin-deviceinfo"
+        version="0.0.1">
+
+  <name>General Device Info Provider</name>
+
+  <description>Provides userfull information about the device, only on android.</description>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/device-info.js" target="js/device-info.js"/>
+
+  <js-module src="www/device-info.js" name="deviceInfo">
+    <clobbers target="deviceInfo" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="DeviceInfoProvider">
+        <param name="android-package" value="com.argochamber.cordova.info.DeviceInfoProvider"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/DeviceInfoProvider.java" target-dir="src/com/argochamber/deviceinfo/"/>
+  </platform>
+
+</plugin>
