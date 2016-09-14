@@ -5,7 +5,7 @@ A full list is written below; [Goto functions list](https://github.com/sigmasold
 
 ### Installing
 
-For now I don't have any `npm` repo. Just clone it and use `plugman` to install it; See [this release](https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo/releases/tag/1.0.0).
+run `npm install cordova-plugin-android-misc-info --save-devs`
 
 ### Making it work
 
