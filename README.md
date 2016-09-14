@@ -1,11 +1,11 @@
 # Android Device Info
 This plugin allows you to gather data from your android device form things like, the __DPI, SwDPI, SDK Version, OS Version...__
 
-A full list is written below; [Functions](Goto functions list)
+A full list is written below; [Goto functions list](Functions)
 
 ### Installing
 
-For now I don't have any `npm` repo. Just clone it and use `plugman` to install it; See [https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo/releases/tag/1.0.0](this release).
+For now I don't have any `npm` repo. Just clone it and use `plugman` to install it; See [this release](https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo/releases/tag/1.0.0).
 
 ### Making it work
 
