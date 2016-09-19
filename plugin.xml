@@ -20,7 +20,7 @@
 -->
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="cordova-plugin-android-misc-info"
-        version="0.0.1">
+        version="1.1.1">
 
   <name>General Device Info Provider</name>
 
@@ -30,9 +30,9 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/device-info.js" target="js/device-info.js"/>
+  <asset src="www/android-device-info.js" target="js/android-device-info.js"/>
 
-  <js-module src="www/device-info.js" name="deviceInfo">
+  <js-module src="www/android-device-info.js" name="deviceInfo">
     <clobbers target="deviceInfo" />
   </js-module>
 

@@ -5,8 +5,7 @@
   "cordova": {
     "id": "cordova-plugin-android-misc-info",
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   },
   "repository": {
