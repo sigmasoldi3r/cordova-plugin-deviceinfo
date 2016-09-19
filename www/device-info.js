@@ -17,31 +17,32 @@
 	
 	Contact: pablobc.1995@gmail.com
 */
-cordova.define("cordova-plugin-deviceinfo.deviceInfo", function (require, exports, module) {
 
-    module.exports = [
-        'getBoard',
-        'getBrand',
-        'getDevice',
-        'getDisplay',
-        'getHost',
-        'getId',
-        'getManufacturer',
-        'getModel',
-        'getProduct',
-        'getTags',
-        'getType',
-        'getUser',
-        'getUID',
-        'getSwDpi',
-        'getSdkVersion',
-        'getOsVersion'
-    ].reduce(function (a, v) {
-        var b = a;
-        b[v] = function (name, successCallback, errorCallback) {
-            cordova.exec(successCallback, errorCallback, "DeviceInfoProvider", v, []);
-        };
-        return b;
-    }, {});
+var object = [
+	'getBoard',
+	'getBrand',
+	'getDevice',
+	'getDisplay',
+	'getHost',
+	'getId',
+	'getManufacturer',
+	'getModel',
+	'getProduct',
+	'getTags',
+	'getType',
+	'getUser',
+	'getUID',
+	'getSwDpi',
+	'getSdkVersion',
+	'getOsVersion'
+].reduce(function (a, v) {
+	var b = a;
+	b[v] = function () {
+	    return new Promise(function (resolve, reject) {
+	        cordova.exec(function (data) { resolve(data); }, function (error) { reject(error); }, "DeviceInfoProvider", v, []);
+	    });
+	};
+	return b;
+}, {});
 
-});
+module.exports = object;

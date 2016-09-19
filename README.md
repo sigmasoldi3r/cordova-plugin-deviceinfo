@@ -39,7 +39,8 @@ Then our controller should be:
   $scope.sdkver = "Loading...";
   document.addEventListener('deviceready', function () {
     
-    deviceInfo.getSdkVersion('', function (sdkver) {
+	//Returns a promise.
+    deviceInfo.getSdkVersion().then(function (sdkver) {
       $scope.sdkver = sdkver;
     });
     
@@ -48,13 +49,19 @@ Then our controller should be:
 }]);
 ```
 
-All functions of the object `deviceInfo` follow this syntax:
+All functions of the object `deviceInfo` returns a promise that, when resolved it passes the data to the first argument.
 ```Javascript
-deviceInfo.getSdkVersion('', successCallback, errorCallback);
+var promise = deviceInfo.getSdkVersion();
+//Or
+deviceInfo.getSdkVersion().then(function(result){
+	//Do something...
+}, function(reason){
+	throw new Error(reason);//This rejects the next promise, if you want...
+});
 ```
-Note that the first argument is an empty string, is just ignored (Cordova plugin things...).
 
 So if you call/access the `deviceInfo` object inside the `deviceready` handler, it should appear as global.
+__WARN:__ Calling it outside may cause an error saying that cannot call function `x` from `undefined deviceInfo`
 
 ## Functions
 
