@@ -19,7 +19,7 @@
 */
 cordova.define("cordova-plugin-deviceinfo.deviceInfo", function (require, exports, module) {
 
-    var channel = require('cordova/channel');
+    /*var channel = require('cordova/channel');
 
 	channel.createSticky('onCordovaInfoReady');
 	// Tell cordova channel to wait on the CordovaInfoReady event
@@ -58,6 +58,6 @@ cordova.define("cordova-plugin-deviceinfo.deviceInfo", function (require, export
         object.isReady = function() {return true;}
     });
 	
-	module.exports = object;
+	module.exports = object;*/
 
 });
