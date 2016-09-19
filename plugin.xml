@@ -19,7 +19,7 @@
 	Contact: pablobc.1995@gmail.com
 -->
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="cordova-plugin-android-misc-info"
+        id="cordova-plugin-deviceinfo"
         version="0.0.1">
 
   <name>General Device Info Provider</name>

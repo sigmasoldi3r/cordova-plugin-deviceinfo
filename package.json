@@ -1,27 +1,27 @@
 {
-  "name": "cordova-plugin-android-misc-info",
-  "version": "1.0.2",
-  "description": "General Device Info Provider For Android",
-  "cordova": {
-    "id": "cordova-plugin-android-misc-info",
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo.git"
-  },
-  "keywords": [
-    "cordova",
-    "device",
-    "metrics"
-  ],
-  "author": "sigmasoldi3r",
-  "license": "GNU3",
-  "bugs": {
-    "url": "https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo/issues"
-  },
-  "homepage": "https://github.com/sigmasoldi3r/cordova-plugin-deviceinfo#readme"
+    "name": "cordova-plugin-deviceinfo",
+    "version": "0.0.1",
+    "description": "General Device Info Provider",
+    "cordova": {
+        "id": "cordova-plugin-deviceinfo",
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sigmasoldi3r/cordova-plugin-devicemetrics.git"
+    },
+    "keywords": [
+        "cordova",
+        "device",
+        "metrics"
+    ],
+    "author": "sigmasoldi3r",
+    "license": "GNU3",
+    "bugs": {
+        "url": "https://github.com/sigmasoldi3r/cordova-plugin-devicemetrics/issues"
+    },
+    "homepage": "https://github.com/sigmasoldi3r/cordova-plugin-devicemetrics#readme"
 }

@@ -19,7 +19,13 @@
 */
 cordova.define("cordova-plugin-deviceinfo.deviceInfo", function (require, exports, module) {
 
-    module.exports = [
+    var channel = require('cordova/channel');
+
+	channel.createSticky('onCordovaInfoReady');
+	// Tell cordova channel to wait on the CordovaInfoReady event
+	channel.waitForInitialization('onCordovaInfoReady');
+	
+	var object = [
         'getBoard',
         'getBrand',
         'getDevice',
@@ -38,10 +44,20 @@ cordova.define("cordova-plugin-deviceinfo.deviceInfo", function (require, export
         'getOsVersion'
     ].reduce(function (a, v) {
         var b = a;
-        b[v] = function (name, successCallback, errorCallback) {
-            cordova.exec(successCallback, errorCallback, "DeviceInfoProvider", v, []);
+        b[v] = function () {
+			var result = null;
+			cordova.exec(function (data) { result = data; }, function (error) { console.error(error) }, "DeviceInfoProvider", v, []);
+			return result;
         };
         return b;
     }, {});
+	
+	object.isReady = function() {return false; }
+	
+	channel.onCordovaReady.subscribe(function() {
+        object.isReady = function() {return true;}
+    });
+	
+	module.exports = object;
 
 });
