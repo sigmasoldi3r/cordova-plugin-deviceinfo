@@ -42,9 +42,32 @@ Then our controller should be:
 	//Returns a promise.
     deviceInfo.getSdkVersion().then(function (sdkver) {
       $scope.sdkver = sdkver;
+		//Then, invoke this if you want your $scope to be updated, because the event is outside of AngulatJS's context.
+		if (!$scope.$$phase){
+			$scope.$apply();
+		}
     });
-    
+	
   });
+  
+}]);
+```
+An alternative, and maybe more clean approach may be this (also may not suit every case):
+```Javascript
+.controller("aController", ["$scope", function($scope){
+  
+	$scope.sdkver = "Loading...";
+	(new Promise((resolve, reject) => {
+	document.addEventListener('deviceready', resolve, false);
+	})).then(() => {
+		deviceInfo.getSdkVersion().then(function (sdkver) {
+			$scope.sdkver = sdkver;
+			//Then, invoke this if you want your $scope to be updated, because the event is outside of AngulatJS's context.
+			if (!$scope.$$phase){
+				$scope.$apply();
+			}
+		});
+	});
   
 }]);
 ```
